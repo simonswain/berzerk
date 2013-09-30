@@ -1,0 +1,521 @@
+body {
+}
+
+html {
+    overflow-y: scroll;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+}
+
+.app {
+    position: fixed;
+    top: 52px;
+    width: 100%;
+    height: 800px;
+    background: #eee;
+    overflow: hidden;
+}
+
+.selector {
+    position: relative;
+    background: #369;
+    color: #fff;
+    height: 48px;
+    z-index: 255;
+}
+
+.canvas {
+    position: relative;
+    background: #fff;
+}
+
+.selector select {
+    margin: 0 2px;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    background: #fff;
+}
+
+.selector>div.product {
+    margin: 6px 0 0 4px;
+    float: left;
+}
+
+.selector>div.format {
+    margin: 4px 0 0 8px;
+    float: left;
+}
+
+.selector>div.dates {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+}
+
+.selector>div.help {
+    margin: 6px 2px 0 8px;
+    float: left;
+}
+
+ul.segments {
+    margin: 2px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.segments li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: left;
+}
+
+ul.segments li a {
+    box-sizing: border-box;
+    display: block;
+    padding: 7px 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #258;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+ul.segments li:first-child a {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+ul.segments li:last-child a {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+
+ul.segments li a.active,
+ul.segments li a.active:hover {
+    background: #fff;
+    color: #000;
+}
+
+ul.segments li a:hover {
+    background: #ddd;
+    color: #222;
+}
+
+
+ul.toggle {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.toggle li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: left;
+}
+
+ul.toggle li a {
+    box-sizing: border-box;
+    display: block;
+    padding: 7px 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #258;
+    color: #fff;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+ul.toggle li a.active,
+ul.toggle li a.active:hover {
+    background: #fff;
+    color: #000;
+}
+
+ul.toggle li a:hover {
+    background: #ddd;
+    color: #222;
+}
+ul.toggle li a.active:hover {
+    background: #fff;
+    color: #316698;
+}
+
+
+ul.buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.buttons li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: left;
+}
+
+ul.buttons li a {
+    box-sizing: border-box;
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    background: #fff;
+    color: #316698;
+    transition: background 0.2s;
+    border-radius: 4px;
+}
+
+ul.buttons li a:hover {
+    background: #316698;
+    color: #fff;
+}
+
+
+.overview {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    height: 100px;
+    cursor: pointer;
+}
+
+.overview .chart {
+    height: 100px;
+}
+
+.overview .rail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    z-index: 200;
+}
+
+.overview .range {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    z-index: 210;
+    cursor: col-resize;
+}
+
+.overview .min,
+.overview .max {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(51, 102, 153, 0.5);
+    height: 100px;
+    width: 4px;    
+    cursor: w-resize;
+}
+
+.overview .min {
+    top: 0;
+    left: 0;
+    width: 4px;    
+    z-index: 255;
+}
+
+.overview .max {
+    top: 0;
+    right: 0;
+    cursor: e-resize;
+    z-index: 256;
+}
+
+.overview .cover-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.overview .cover-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+    position: absolute;
+    top: 148px;
+    left: 0;
+    width: 960px;
+    height: 320px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.interactive {
+    position: absolute;
+    top: 148px;
+    left: 0;
+    width: 960px;
+    height: 320px;
+    cursor: pointer;
+}
+
+.dataset {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 960px;
+    height: 320px;
+    transition: left 0.2s;
+}
+
+.dataset.inactive {
+    left: 2000px;
+}
+
+.datachart {
+    transition: left 0.2s;
+}
+
+.datachart.inactive {
+    left: -2000px;
+}
+
+.dataset .fill {
+}
+
+.dataset table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%
+}
+
+.dataset table td{
+    padding: 4px;
+    font-size: 9pt;
+}
+
+.dataset table thead td {
+    color: #fff;
+    background: #316698;
+    border-bottom: 1px solid #316698;
+}
+
+.dataset table tbody tr:hover td {
+    background: #ff9;
+    cursor: pointer;
+}
+
+.dataset table tbody tr.monday td {
+    border-top: 1px solid #ccc;
+}
+
+.dataset table td {
+    border-top: 1px solid #eee;
+    background: #fff;
+}
+
+.dataset td.section {
+    text-align: center;
+    font-weight: bold;
+}
+
+.dataset td.date {
+    font-weight: bold;
+    width: 80px;
+}
+
+.dataset td.day {
+    width: 32px;
+    color: #888;
+}
+
+.dataset td.day span {
+    display: block;
+    padding: 2px;
+    background: #eee;
+    color: #888;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.dataset td.numeric {
+    width: 80px;
+    text-align: right;
+    font-size: 9pt;
+}
+
+.dataset thead td.divider-right {
+    border-right: 1px solid #5388ba;
+}
+
+.dataset td.divider-right {
+    border-right: 1px solid #ddd;
+}
+
+.dataset td.code {
+    color: #888;
+    text-align: right;
+    font-size: 9pt;
+}
+
+.dataset td.volume {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.dataset td.change {
+    color: #888;
+    width: 80px;
+    text-align: right;
+}
+
+.dataset td.change.up {
+    color: #090;
+}
+
+.dataset td.change.down {
+    color: #900;
+}
+
+.dataset td.volume.inactive {
+    color: #aaa;
+}
+
+.dataset td.price {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.dataset td.value {
+    width: 80px;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+.datachart {
+    position: absolute;
+    top: 160px;
+    left: 0;
+    border-top: 1px solid #ddd;
+    width: 960px;
+    height: 320px;
+}
+
+.daterange {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #ddd;
+    background: #eee;
+    width: 960px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.daterange span {
+    display: block;
+    position: absolute;
+    width: 24px;
+    text-align: center;
+    font-size: 8pt;
+    color: #888;
+}
+
+.daterange .day {
+    top: 0;
+}
+
+.daterange .date {
+    top: 14px;
+}
+
+.daterange .month {
+    top: 28px;
+    width: 64px;
+}
+
+.daterange .year {
+    top: 42px;
+    width: 64px;
+}
+
+
+.valuerange {
+    position: absolute;
+    top: 160px;
+    right: 0;
+    border-top: 1px solid #ddd;
+    width: 64px;
+    height: 724px;
+}
+
+.valuerange span {
+    position: absolute;
+    width: 64px;
+    height: 16px;
+    text-align: right;
+    font-size: 9pt;
+    color: #888;
+}
+
+.valuerange span.primary {
+    font-weight: bold;
+    color: #666;
+}
+
+.valuerange span.value {
+    top: 0;
+    right: 0;
+}
+
+.help-overlay {
+    position: absolute;
+    top: 160px;
+    left: 320px;
+    width: 800px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 16px #ddd;
+    color: #fff;
+}
+
+.help-overlay a.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.help-overlay a.close:hover {
+    background: #fff;
+    color: #316698;
+}
