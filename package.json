@@ -1,0 +1,48 @@
+{
+  "name": "bezerk",
+  "description": "Bezerk",
+  "version": "0.0.1",
+  "homepage": "https://github.com/simonswain/bezerk",
+  "author": {
+    "name": "Simon Swain",
+    "email": "simon@simonswain.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/simonswain/bezerk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/simonswain/bezerk/issues"
+  },
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "node server"
+  },
+  "dependencies": {
+    "express": "~3.3.4",
+    "async": "~0.2.9",
+    "underscore": "~1.5.1",
+    "jade": "~0.34.1",
+    "less-middleware": "~0.1.12",
+    "less": "~1.4.2"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.7.4",
+    "nodeunit-httpclient": "~0.2.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.2.0",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-env": "~0.1.0"
+  },
+  "keywords": [
+    "chart",
+    "charting",
+    "interactive",
+    "backbone",
+    "raphael"
+  ]
+}
