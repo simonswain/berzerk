@@ -1,10 +1,10 @@
-# Bezerk
+# Berzerk
 
 Proof of concept interactive charting using Backbone and Raphael
 
 ```
-https://github.com/simonswain/bezerk.git
-cd bezerk
+https://github.com/simonswain/berzerk.git
+cd berzerk
 npm install
 bower install
 node start
