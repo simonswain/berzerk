@@ -33,4 +33,4 @@ require('./routes')(app);
 
 server.listen(app.port);
 
-console.log('Bezerk', 'http://127.0.0.1:' + app.port);
+console.log('Berzerk', 'http://127.0.0.1:' + app.port);
